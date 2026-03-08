@@ -1,0 +1,60 @@
+/* GitHub Flowers – Side Placement Override */
+
+.hero-flower-left,
+.hero-flower-right {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* Left side: pushed near center */
+.hero-flower-left {
+    left: 28%;
+    transform-origin: bottom left;
+}
+
+.hero-flower-left .flowers {
+    transform: scale(0.38);
+    transform-origin: bottom left;
+}
+
+/* Right side: pushed near center, mirrored */
+.hero-flower-right {
+    right: 28%;
+    transform-origin: bottom right;
+}
+
+.hero-flower-right .flowers {
+    transform: scale(0.38) scaleX(-1);
+    transform-origin: bottom right;
+}
+
+@media (max-width: 900px) {
+    .hero-flower-left {
+        left: 15%;
+    }
+
+    .hero-flower-right {
+        right: 15%;
+    }
+
+    .hero-flower-left .flowers {
+        transform: scale(0.27);
+        transform-origin: bottom left;
+    }
+
+    .hero-flower-right .flowers {
+        transform: scale(0.27) scaleX(-1);
+        transform-origin: bottom right;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-flower-left,
+    .hero-flower-right {
+        display: none;
+    }
+}
